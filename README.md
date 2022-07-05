@@ -1,1 +1,1 @@
-# DS-projects
+# DS projects
