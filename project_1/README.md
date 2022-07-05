@@ -1,2 +1,2 @@
 ## Project 1:
-[a relative link](https://www.kaggle.com/competitions/new-york-city-taxi-fare-prediction/overview)
+[Kaggle: New York City Taxi Fare Prediction](https://www.kaggle.com/competitions/new-york-city-taxi-fare-prediction/overview)
