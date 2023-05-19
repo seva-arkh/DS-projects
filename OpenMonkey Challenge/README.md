@@ -10,8 +10,8 @@ A custom dataset class PoseEstimationDataset was created, which extended the tor
 
 ## Model Architectures: 
 Two different models were used for the comparative study: a pre-trained ResNet-50 model and a YOLOv8 model.
-ResNet-50: A pre-trained ResNet-50 model was utilized as the backbone for feature extraction in this pose estimation project. The model's original fully connected layer was removed, and a new fully connected layer was added to output 34 values (17 landmarks * 2 coordinates: x and y). This new layer served as the regression head for pose estimation, allowing the model to predict the 17 landmark points directly from the input image.
-YOLOv8: YOLOv8 is an anchor-free object detection model that reduces the number of box predictions and speeds up the Non-Maximum Suppression (NMS) process. YOLOv8 uses mosaic augmentation during training; however, this augmentation is disabled for the last ten epochs, as it has been found that this augmentation can be detrimental if used during the entire training process.
+* ResNet-50: A pre-trained ResNet-50 model was utilized as the backbone for feature extraction in this pose estimation project. The model's original fully connected layer was removed, and a new fully connected layer was added to output 34 values (17 landmarks * 2 coordinates: x and y). This new layer served as the regression head for pose estimation, allowing the model to predict the 17 landmark points directly from the input image.
+* YOLOv8: YOLOv8 is an anchor-free object detection model that reduces the number of box predictions and speeds up the Non-Maximum Suppression (NMS) process. YOLOv8 uses mosaic augmentation during training; however, this augmentation is disabled for the last ten epochs, as it has been found that this augmentation can be detrimental if used during the entire training process.
 
 
 ## Model Training and Optimization: 
@@ -22,26 +22,27 @@ After each epoch, the models' performances were evaluated on the validation set.
 
 ## Model Evaluation:
 To thoroughly evaluate the performance of both the ResNet-50 and YOLOv8 models on the validation set, several metrics were used:
-Mean Absolute Error (MAE): The average absolute difference between the predicted and ground truth landmark coordinates.
-Mean Squared Error (MSE): The average squared difference between the predicted and ground truth landmark coordinates.
-Mean Per Joint Position Error (MPJPE): The average Euclidean distance between the predicted and ground truth landmarks for all keypoints.
-Percentage of Correct Keypoints (PCK): The percentage of predicted keypoints that are within a certain threshold distance (e.g., 5% or 10%) from the ground truth keypoints.
+* Mean Absolute Error (MAE): The average absolute difference between the predicted and ground truth landmark coordinates.
+* Mean Squared Error (MSE): The average squared difference between the predicted and ground truth landmark coordinates.
+* Mean Per Joint Position Error (MPJPE): The average Euclidean distance between the predicted and ground truth landmarks for all keypoints.
+* Percentage of Correct Keypoints (PCK): The percentage of predicted keypoints that are within a certain threshold distance (e.g., 5% or 10%) from the ground truth keypoints.
 
 
 ## Results:
 
 ResNet-50 Model:
-Mean Absolute Error: 0.2825
-Mean Squared Error: 5.6003
-Mean Per Joint Position Error: 15.1842
-Percentage of Correct Keypoints at 5% Threshold: 23.13%
-Percentage of Correct Keypoints at 10% Threshold: 54.42%
+* Mean Absolute Error: 0.2825
+* Mean Squared Error: 5.6003
+* Mean Per Joint Position Error: 15.1842
+* Percentage of Correct Keypoints at 5% Threshold: 23.13%
+* Percentage of Correct Keypoints at 10% Threshold: 54.42%
+
 YOLOv8 Model:
-Mean Absolute Error: 0.0249
-Mean Squared Error: 3.6358
-Mean Per Joint Position Error: 67.2967
-Percentage of Correct Keypoints at 5% Threshold: 44.35%
-Percentage of Correct Keypoints at 10% Threshold: 64.33%
+* Mean Absolute Error: 0.0249
+* Mean Squared Error: 3.6358
+* Mean Per Joint Position Error: 67.2967
+* Percentage of Correct Keypoints at 5% Threshold: 44.35%
+* Percentage of Correct Keypoints at 10% Threshold: 64.33%
 
 ## Conclusion:
 
